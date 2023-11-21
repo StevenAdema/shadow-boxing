@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: "Press Start 2P",	"Kongtext", "Helvetica";
+    font-size: 5em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* color: #333; */
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.pageTitle {
+    margin-top: 20px;
+    width:30%;
+    border-style: solid;
+    border-radius: 10px;
+    border: 8px solid blacks;
+}
+
+.options {
+    width: 50%;
+    align-self: center;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.93);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#menu {
+    text-align: center;
+    align-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: inline;
+    overflow: auto;
+    box-sizing: border-box;
+    /* background-image: url("img/boxing_arena.webp"); */
+    background-image: url("img/crowd4.png");
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-size:cover
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.option-title {
+    text-align: right;
+    flex: 1;
+}
+
+.option-value {
+    text-align: left;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.option-value:hover {
+    color: #ff0000;
+}
+
+#workoutScreen {
+    text-align: center;
+    align-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: inline;
+    overflow: auto;
+    box-sizing: border-box;
+    background-image: url("img/crowd4.png");
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-size:cover
+}
+ 
+#scoreboard {
+    background-color: black;
+    border-style: solid;
+    border-color: rgb(218, 168, 60);
+    border-width: 3px;
+    border-radius: 20px;
+    height:140px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+}
+
+#round {
+    width: 30%;
+    color: red;
+    text-align: center;
+    font-family: "Press Start 2P",	"Kongtext", "Helvetica";
+    font-size: 1em;
+    font-weight: 200;
+}
+
+#timer {
+    width: 40%;
+    color: red;
+    padding-top: 0.4em;
+    text-align: center;
+    font-family: "Press Start 2P",	"Kongtext", "Helvetica";
+    font-size: 5vw;
+    font-weight: 200;
+    /* border-style: dashed;
+    border-width: 5px;
+    border-color:rgba(228, 0, 0, 0.2); */
+}
+
+#icons {
+    width: 30%;
+    color: red;
+    text-align: center;
+    font-family: "Press Start 2P",	"Kongtext", "Helvetica";
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+
+#boxer-body {
+    position: absolute;
+    bottom: 0px;
+    left:10%;
+    height: 80%;
+    width: 80%;
+    /* background-color: black; */
+    align-items: right;
+}
+
+#boxer-body-img {
+    position: relative;
+    bottom: 0;
+    height: 100%;
+}
+
+#boxer-bubble {
+    position: absolute;
+    top: 20%; 
+    right: 10%; 
+    transform: translate(-50%, -50%); 
+    width: 20%; 
+}
+
+#pad-right {
+    position: absolute;
+    top: 50%;
+    left: 62%; 
+    transform: translate(-50%, -50%); 
+    /* width: 20%;  */
+    height: 35%;
+}
+
+#pad-left {
+    position: absolute;
+    top: 50%;
+    left: 40%; 
+    transform: translate(-50%, -50%); 
+    /* width: 20%;  */
+    height: 35%;
+}

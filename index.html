@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shadow Boxing</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+            rel="stylesheet">
+        <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet">
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    </head>
+    <body>
+        <div id="menu" style="display: none;">
+            <img src="img/title2.png" class="pageTitle">
+            <br>
+            <br>
+            <br>
+            <div class="nes-container with-title options">
+                <p class="title">Options</p>
+                <div class="option-container">
+                    <div class="option" onclick="cycleOption('option1')">
+                        <span class="option-title">speed:</span>
+                        <span id="option1" class="option-value">normal</span>
+                    </div>
+                    <div class="option" onclick="cycleOption('option2')">
+                        <span class="option-title">focus:</span>
+                        <span id="option2" class="option-value">hybrid</span>
+                    </div>
+                    <div class="option" onclick="cycleOption('option3')">
+                        <span class="option-title">rounds:</span>
+                        <span id="option3" class="option-value">5</span>
+                    </div>
+                    <div class="option" onclick="cycleOption('option4')">
+                        <span class="option-title">rest:</span>
+                        <span id="option4" class="option-value">15s</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <a class="nes-btn" id="startButton" href="#">Start!</a>
+        </div>
+        <!-- <div id="workoutScreen" style="display: none;"> -->
+            <div id="workoutScreen">
+                <div id="scoreboard">                    
+                    <div id="round">Round<br>1 / 8</div>
+                    <div id="timer">
+                        <p id="safeTimerDisplay">3:00</p>
+                    </div>
+                    <div id="icons">
+                        <a id="backToMenu" class="fas fa-undo"></a>
+                        <a id="play_pause" class="fas fa-pause"></a>
+                        <a class="fas fa-volume-up"></a>
+                    </div>
+                </div>
+            <div id="boxer-body">
+            <img  id="boxer-body-img" src="img/boxer.png">
+            <img  id="pad-left" src="img/pad.png">
+            <img  id="pad-right" src="img/pad.png">
+            <div id="boxer-bubble">
+                  <section class="message -left">
+                    <!-- Balloon -->
+                    <div class="nes-balloon from-left">
+                      <p>1-1-2-3</p>
+                    </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <audio id="audio" src="fx/boxing-bell.mp3"></audio>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        </body>
+    </html>
