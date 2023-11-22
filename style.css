@@ -16,10 +16,11 @@ body {
 
 .pageTitle {
     margin-top: 20px;
-    width:30%;
+    width:40%;
     border-style: solid;
-    border-radius: 10px;
-    border: 8px solid blacks;
+    border-width: 30px;
+    border-radius: 5px; 
+    border: solid black;
 }
 
 .options {
@@ -155,7 +156,7 @@ body {
     top: 20%; 
     right: 10%; 
     transform: translate(-50%, -50%); 
-    width: 20%; 
+    /* width: 100%;  */
 }
 
 #pad-right {

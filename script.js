@@ -25,14 +25,40 @@ document.getElementById('backToMenu').addEventListener('click', function() {
 
 /***************   TIMER FUNCTIONALITY     *****************************/
 window.onload = function() {
-    let x = 181; // Duration of first timer phase in seconds
+    let x = 30; // Duration of first timer phase in seconds
     let y = 21; // Duration of second timer phase in seconds
     let z = 8; // Number of cycles
     let currentTimer = x;
     let intervalId;
     let cycleCount = 1;
+    var combos = [[1,1,2,3],[1,3],[1,1],[2,3,2]]
 
     startTimer();
+    runTrainer(combos);
+
+    function runTrainer(combos){
+        for (let i = 0; i < combos.length; i++) {
+            const combo = combos[i];
+            for (let j = 0; j < combo.length; j++) {
+                const punch = combo[j];
+                if (punch == 1) {
+                    console.log("jab")
+                    $('#pad-left').animate({height:'75%'});
+                    setTimeout(function(){ $('#pad-left').animate({height:'35%'}); }, 1000);
+                }
+                if (punch == 2) {
+                    console.log("cross")
+                    $('#pad-right').animate({height:'75%'});
+                    setTimeout(function(){ $('#pad-right').animate({height:'35%'}); }, 1000);
+                }
+                if (punch == 3) {
+                    console.log("hook");
+                    $('#pad-right').animate({height:'75%'});
+                    setTimeout(function(){ $('#pad-right').animate({height:'35%'}); }, 1000);
+                }
+            }
+        }
+    }
 
     function updateTimerDisplay() {
     const minutes = Math.floor(currentTimer / 60);
@@ -94,3 +120,25 @@ $(document).ready(function () {
 
 var audio = document.getElementById("audio");
 audio.volume = 0.2;
+
+var combos = [[1,1,2,3],[1,3],[1,1],[2,3,2]]
+function runTrainer(combos, ){
+    for (let i = 0; i < combos.length; i++) {
+        const combo = combos[i];
+        for (let j = 0; j < combo.length; j++) {
+            const punch = combo[j];
+            if (punch == 1) {
+                document.getElementById('jab').style.backgroundColor = "red";
+                setTimeout(function(){ document.getElementById('pad-right').style.backgroundColor = "white"; }, 500);
+            }
+            if (punch == 2) {
+                document.getElementById('cross').style.backgroundColor = "red";
+                setTimeout(function(){ document.getElementById('pad-right').style.backgroundColor = "white"; }, 500);
+            }
+            if (punch == 3) {
+                document.getElementById('hook').style.backgroundColor = "red";
+                setTimeout(function(){ document.getElementById('pad-right').style.backgroundColor = "white"; }, 500);
+            }
+        }
+    }
+}
