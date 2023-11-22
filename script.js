@@ -16,6 +16,7 @@ document.getElementById('startButton').addEventListener('click', function() {
     document.getElementById('workoutScreen').style.display = 'block';
     var audio = document.getElementById("audio");
     audio.play();
+    go();
 });
 
 document.getElementById('backToMenu').addEventListener('click', function() {
@@ -24,38 +25,72 @@ document.getElementById('backToMenu').addEventListener('click', function() {
 });
 
 /***************   TIMER FUNCTIONALITY     *****************************/
-window.onload = function() {
-    let x = 30; // Duration of first timer phase in seconds
-    let y = 21; // Duration of second timer phase in seconds
+function go() {
+    let x = 181; // Duration of first timer phase in seconds
+    let y = 31; // Duration of second timer phase in seconds
     let z = 8; // Number of cycles
     let currentTimer = x;
     let intervalId;
     let cycleCount = 1;
-    var combos = [[1,1,2,3],[1,3],[1,1],[2,3,2]]
+    var combos = [[ 1,1,2,3],[1,1,2,3],[1,1,2,3],[2,2,1,1,2,3]]
+    var audio = new Audio('fx/punch.mp3')
 
     startTimer();
     runTrainer(combos);
 
+    function playAudio(url) {
+        new Audio(url).play();
+      }
+
     function runTrainer(combos){
+        let delay = 0;
         for (let i = 0; i < combos.length; i++) {
             const combo = combos[i];
             for (let j = 0; j < combo.length; j++) {
                 const punch = combo[j];
-                if (punch == 1) {
-                    console.log("jab")
-                    $('#pad-left').animate({height:'75%'});
-                    setTimeout(function(){ $('#pad-left').animate({height:'35%'}); }, 1000);
-                }
-                if (punch == 2) {
-                    console.log("cross")
-                    $('#pad-right').animate({height:'75%'});
-                    setTimeout(function(){ $('#pad-right').animate({height:'35%'}); }, 1000);
-                }
-                if (punch == 3) {
-                    console.log("hook");
-                    $('#pad-right').animate({height:'75%'});
-                    setTimeout(function(){ $('#pad-right').animate({height:'35%'}); }, 1000);
-                }
+                setTimeout(function(){
+                    if (punch == 1) {
+                        console.log("jab")
+                        $('#pad-left').css({ 
+                            transition: 'transform 0.2s ease-in-out',
+                            transform: 'scale(1.4) rotate(10deg) translate(-40%, -40%)'
+                        });
+                        playAudio('fx/punch1.mp3');
+                        setTimeout(function() {
+                            $('#pad-left').css({
+                                transform: 'scale(1) rotate(0deg) translate(-50%, -50%)'
+                            });
+                        }, 200);
+                    }
+                    if (punch == 2) {
+                        console.log("cross")
+                        $('#pad-right').css({ 
+                            transition: 'transform 0.2s ease-in-out',
+                            transform: 'scale(1.4) rotate(-10deg) translate(-35%, -50%)'
+                        });
+                        playAudio('fx/punch1.mp3');
+                        setTimeout(function() {
+                            $('#pad-right').css({
+                                transform: 'scale(1) rotate(0deg) translate(-50%, -50%)'
+                            });
+                        }, 200);
+                    }
+                    if (punch == 3) {
+                        console.log("hook");
+                        $('#pad-left').css({ 
+                            transition: 'transform 0.2s ease-in-out',
+                            transform: 'scale(1.2) rotate(-90deg) translate(45%, -30%)'
+                        });
+                        playAudio('fx/punch1.mp3')
+                        setTimeout(function() {
+                            $('#pad-left ').css({
+                                transform: 'scale(1) rotate(0deg) translate(-50%, -50%)'
+                            });
+                        }, 200);
+                    }
+                }, delay);
+
+                delay += 300; // 1000 ms for animation + 1000 ms pause
             }
         }
     }
